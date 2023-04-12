@@ -3,7 +3,7 @@ import { Component, signal, WritableSignal } from '@angular/core';
 @Component({
   // signals: true, (not available yet)
   template: `
-    <div #clickMe class="click-me" (click)="onClick()">Click me! (Signal)</div>
+    <div class="click-me" (click)="onClick()">Click me! (Signal)</div>
     <div>Number of clicks: {{ clicksCount() }}</div>
   `,
   styles: [

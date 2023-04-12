@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
         <a [routerLink]="['/from-event/rxjs']">From Event RxJS</a>
         <a [routerLink]="['/http/rxjs']">Http Request RxJS</a>
         <a [routerLink]="['/from-event/signal']">From Event Signal</a>
+        <a [routerLink]="['/http/signal']">Http Request Signal</a>
       </div>
     </div>
   `,
