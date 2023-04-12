@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-signals-dev-js-2023';
 }
+
+/*
+todo:
+ favicon synergy
+ general styling
+ header + navigation buttons
+ footer + links
+ sidebar logo + navigation
+ */
