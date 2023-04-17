@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
       <div class="navigation">
         <a [routerLink]="['/from-event/rxjs']">From Event RxJS</a>
         <a [routerLink]="['/http/rxjs']">Http Request RxJS</a>
+        <a [routerLink]="['/search-debounce/rxjs']">Search Debounce RxJS</a>
         <a [routerLink]="['/from-event/signal']">From Event Signal</a>
         <a [routerLink]="['/http/signal']">Http Request Signal</a>
       </div>
