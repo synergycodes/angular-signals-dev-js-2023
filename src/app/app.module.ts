@@ -15,6 +15,7 @@ import { HttpRxjsComponent } from './components/rxjs/http.rxjs.component';
 import { SearchDebounceRxjsComponent } from './components/rxjs/search-debounce.rxjs.component';
 import { FromEventSignalComponent } from './components/signal/from-event.signal.component';
 import { HttpSignalComponent } from './components/signal/http.signal.component';
+import { SearchDebounceSignalComponent } from './components/signal/search-debounce.signal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'search-debounce/rxjs', component: SearchDebounceRxjsComponent },
   { path: 'from-event/signal', component: FromEventSignalComponent },
   { path: 'http/signal', component: HttpSignalComponent },
+  { path: 'search-debounce/signal', component: SearchDebounceSignalComponent },
   { path: '**', redirectTo: '/' }
 ];
 
@@ -39,6 +41,7 @@ const routes: Routes = [
     SearchDebounceRxjsComponent,
     FromEventSignalComponent,
     HttpSignalComponent,
+    SearchDebounceSignalComponent,
   ],
   imports: [
     BrowserModule,
