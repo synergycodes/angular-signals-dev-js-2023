@@ -17,6 +17,7 @@ import { ExchangeRatesRxjsComponent } from './components/rxjs/exchange-rates.rxj
 import { FromEventSignalComponent } from './components/signal/from-event.signal.component';
 import { HttpSignalComponent } from './components/signal/http.signal.component';
 import { SearchDebounceSignalComponent } from './components/signal/search-debounce.signal.component';
+import { ExchangeRatesSignalComponent } from './components/signal/exchange-rates.signal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'from-event/signal', component: FromEventSignalComponent },
   { path: 'http/signal', component: HttpSignalComponent },
   { path: 'search-debounce/signal', component: SearchDebounceSignalComponent },
+  { path: 'exchange-rates/signal', component: ExchangeRatesSignalComponent },
   { path: '**', redirectTo: '/' }
 ];
 
@@ -45,6 +47,7 @@ const routes: Routes = [
     FromEventSignalComponent,
     HttpSignalComponent,
     SearchDebounceSignalComponent,
+    ExchangeRatesSignalComponent,
   ],
   imports: [
     BrowserModule,

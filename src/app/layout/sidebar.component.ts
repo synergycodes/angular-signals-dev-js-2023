@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
         <a [routerLink]="['/from-event/signal']">From Event Signal</a>
         <a [routerLink]="['/http/signal']">Http Request Signal</a>
         <a [routerLink]="['/search-debounce/signal']">Search Debounce Signal</a>
+        <a [routerLink]="['/exchange-rates/signal']">Exchange Rates Signal</a>
       </div>
     </div>
   `,
