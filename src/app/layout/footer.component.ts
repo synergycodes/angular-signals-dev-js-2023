@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   template: `
     <div>FOOTER</div>
   `,
-  styles: [
-    `:host { background-color: yellow; height: 50px }`
-  ]
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {}

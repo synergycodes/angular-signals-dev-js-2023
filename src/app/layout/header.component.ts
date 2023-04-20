@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
       <span>Dev.js Summit</span>
     </div>
   `,
-  styles: [
-    `:host { background-color: lightblue; height: 75px }`
-  ]
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {}

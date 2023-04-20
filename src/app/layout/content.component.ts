@@ -4,9 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-content',
   template: `
     <router-outlet></router-outlet>
+    <div>LOG</div>
   `,
-  styles: [
-    `:host { background-color: lightslategrey; flex: auto; min-height: 100px; }`
-  ]
+  styleUrls: ['./content.component.css']
 })
 export class ContentComponent {}
