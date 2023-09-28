@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild } from '@angular/core';
 import { BehaviorSubject, fromEvent, map, Observable, Subject, takeUntil, tap } from 'rxjs';
+import { LogService } from '../../services/log.service';
 
 @Component({
   template: `
@@ -14,6 +15,7 @@ import { BehaviorSubject, fromEvent, map, Observable, Subject, takeUntil, tap } 
 export class FromEventRxjsComponent implements AfterViewInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   private clicksCountSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  private readonly logService = inject(LogService);
 
   @ViewChild('clickMe', { static: true })
   clickMe: ElementRef | undefined;
@@ -27,7 +29,7 @@ export class FromEventRxjsComponent implements AfterViewInit, OnDestroy {
         map(() => 'Clicked!'),
         tap(() => this.clicksCountSubject$.next(this.clicksCountSubject$.value + 1))
       )
-      .subscribe(console.log);
+      .subscribe(msg => this.logService.log(msg));
   }
 
   ngOnDestroy() {

@@ -1,5 +1,6 @@
-import { Component, effect, signal, WritableSignal } from '@angular/core';
+import { Component, effect, inject, signal, WritableSignal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LogService } from '../../services/log.service';
 
 @Component({
   template: `
@@ -12,11 +13,12 @@ import { HttpClient } from '@angular/common/http';
   ]
 })
 export class HttpSignalComponent {
+  private readonly logService = inject(LogService);
   charactersCount: WritableSignal<string> = signal<string>('0');
   characters: WritableSignal<any[]> = signal<any[]>([]);
 
   constructor(private readonly httpClient: HttpClient) {
-    effect(() => console.log(this.characters()));
+    effect(() => this.logService.log(this.characters()));
   }
 
   fetchData() {

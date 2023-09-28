@@ -1,4 +1,5 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
+import { LogService } from '../../services/log.service';
 
 @Component({
   // signals: true, (not available yet)
@@ -12,10 +13,11 @@ import { Component, signal, WritableSignal } from '@angular/core';
   ]
 })
 export class FromEventSignalComponent {
+  private readonly logService = inject(LogService);
   clicksCount: WritableSignal<number> = signal<number>(0);
 
   onClick() {
-    console.log('Clicked');
+    this.logService.log('Clicked');
     this.clicksCount.update(count => count + 1);
   }
 }

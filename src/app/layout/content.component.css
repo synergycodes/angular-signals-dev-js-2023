@@ -1,1 +1,6 @@
 :host { background-color: #fffdfd; flex: auto; min-height: 100px; padding: 5%; }
+
+.log-container {
+  overflow-y: auto;
+  height: 500px;
+}

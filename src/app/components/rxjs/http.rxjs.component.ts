@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, fromEvent, map, Subject, switchMap, takeUntil, tap } from 'rxjs';
+import { LogService } from '../../services/log.service';
 
 @Component({
   template: `
@@ -16,6 +17,7 @@ export class HttpRxjsComponent implements AfterViewInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   private charactersSubject$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   private loading = false;
+  private readonly logService = inject(LogService);
 
   @ViewChild('clickMe', { static: true })
   clickMe: ElementRef | undefined;
@@ -37,7 +39,7 @@ export class HttpRxjsComponent implements AfterViewInit, OnDestroy {
         tap(characters => this.charactersSubject$.next(characters)),
         tap(() => this.loading = false),
       )
-      .subscribe(console.log);
+      .subscribe(msg => this.logService.log(msg));
   }
 
   ngOnDestroy() {
