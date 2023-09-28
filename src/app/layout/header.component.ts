@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <div>
-      <span>19.04.2023</span>
-      <span>Dev.js Summit</span>
-    </div>
+    <header>
+      <h2>Angular Signals</h2>
+      <h4>A komu to potrzebne? A dlaczego?</h4>
+    </header>
   `,
   styleUrls: ['./header.component.css']
 })
