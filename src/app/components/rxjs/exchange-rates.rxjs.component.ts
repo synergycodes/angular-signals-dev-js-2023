@@ -20,12 +20,12 @@ export class ExchangeRatesRxjsComponent implements OnInit, OnDestroy {
     })
   );
   private plnSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  private rateSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(4.22);
+  private rateSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(4.41);
 
   usd$: Observable<number> = combineLatest([
-    this.plnSubject$.asObservable(),
+    this.plnSubject$,
     this.rateSubject$,
-  ]).pipe(map(([pln, usd]) => pln * usd));
+  ]).pipe(map(([pln, rate]) => pln * rate));
 
   ngOnInit() {
     this.interval$.subscribe();
