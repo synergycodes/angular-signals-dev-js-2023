@@ -31,9 +31,9 @@ export class FormRxjsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.password.valueChanges.pipe(
-      takeUntil(this.unsubscribe$),
       filter(() => !!this.repeatPassword.value),
       tap(() => this.repeatPassword.setValue('')),
+      takeUntil(this.unsubscribe$),
     ).subscribe();
   }
 

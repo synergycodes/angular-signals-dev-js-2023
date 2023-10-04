@@ -25,9 +25,9 @@ export class FromEventRxjsComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     fromEvent(this.clickMe!.nativeElement, 'click')
       .pipe(
-        takeUntil(this.unsubscribe$),
         map(() => 'Clicked!'),
-        tap(() => this.clicksCountSubject$.next(this.clicksCountSubject$.value + 1))
+        tap(() => this.clicksCountSubject$.next(this.clicksCountSubject$.value + 1)),
+        takeUntil(this.unsubscribe$),
       )
       .subscribe(msg => this.logService.log(msg));
   }

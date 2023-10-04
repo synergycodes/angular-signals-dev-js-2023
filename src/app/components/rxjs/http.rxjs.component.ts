@@ -32,12 +32,12 @@ export class HttpRxjsComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     fromEvent(this.clickMe!.nativeElement, 'click')
       .pipe(
-        takeUntil(this.unsubscribe$),
         tap(() => this.loading = true),
         switchMap(() => this.httpClient.get('https://rickandmortyapi.com/api/character')),
         map((response: any) => response.results),
         tap(characters => this.charactersSubject$.next(characters)),
         tap(() => this.loading = false),
+        takeUntil(this.unsubscribe$),
       )
       .subscribe(msg => this.logService.log(msg));
   }

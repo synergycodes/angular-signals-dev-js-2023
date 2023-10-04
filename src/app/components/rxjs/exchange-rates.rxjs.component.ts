@@ -14,10 +14,10 @@ import { BehaviorSubject, combineLatest, interval, map, Observable, Subject, tak
 export class ExchangeRatesRxjsComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   private interval$: Observable<number> = interval(1000).pipe(
-    takeUntil(this.unsubscribe$),
     tap(() => {
       this.rateSubject$.next(this.rateSubject$.value + (Math.random() * 0.1 - 0.05));
-    })
+    }), // rateSubject$.next(randomRate)
+    takeUntil(this.unsubscribe$),
   );
   private plnSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private rateSubject$: BehaviorSubject<number> = new BehaviorSubject<number>(4.41);

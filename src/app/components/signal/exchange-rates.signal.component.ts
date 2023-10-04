@@ -13,7 +13,7 @@ import { Component, computed, OnDestroy, OnInit, Signal, signal, WritableSignal 
 export class ExchangeRatesSignalComponent implements OnInit, OnDestroy {
   private interval: ReturnType<typeof setInterval> | undefined;
   private pln: WritableSignal<number> = signal<number>(0);
-  private rate: WritableSignal<number> = signal<number>(4.22);
+  private rate: WritableSignal<number> = signal<number>(4.41);
 
   usd: Signal<number> = computed<number>(() => this.pln() * this.rate());
 
