@@ -7,12 +7,3 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 }
-
-/*
-todo:
- favicon synergy
- general styling
- header + navigation buttons
- footer + links
- sidebar logo + navigation
- */
